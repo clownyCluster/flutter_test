@@ -20,15 +20,33 @@ on:
 
 #       - name: Run tests
 #         run: flutter test
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: "20"
+
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Install dependencies
+#         run: flutter pub get
+
+#       - name: Run tests
+#         run: flutter test
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20"
+      - name: Install Node.js
+        run: |
+          curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+          sudo apt-get install -y nodejs
 
       - name: Checkout code
         uses: actions/checkout@v2
