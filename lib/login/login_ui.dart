@@ -59,7 +59,7 @@ class _LoginFormState extends State<LoginForm> {
                 },
                 child: Text('Login'),
               ),
-              
+              Text('Just to configure ci setup')
             ],
           ),
         ),
